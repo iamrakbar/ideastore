@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IDEASTORE — Build a premium, responsive digital storefront.</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@4/themes/light.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="relative text-gray-900 leading-normal">
+    <div id="header">
+      <nav
+        id="nav"
+        class="flex bg-white border-b border-gray-200 fixed top-0 inset-x-0 z-100 h-16 items-center z-50"
+      >
+        <div class="container relative mx-auto px-6">
+          <div class="flex items-center -mx-6">
+            <div class="lg:w-1/4 xl:w-1/5 pl-6 pr-6 lg:pr-8">
+              <div class="flex items-center">
+                <a
+                  href="/"
+                  class="block flex justify-start items-center lg:mr-4"
+                >
+                  <svg
+                    class="h-10 w-auto block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      class="text-gray-400 fill-current"
+                      d="M3 6l9 4v12l-9-4V6zm14-3v2c0 1.1-2.24 2-5 2s-5-.9-5-2V3c0 1.1 2.24 2 5 2s5-.9 5-2z"
+                    />
+                    <polygon
+                      class="text-gray-600 fill-current"
+                      points="21 6 12 10 12 22 21 18"
+                    />
+                  </svg>
+                  <span
+                    class="ml-1 text-2xl text-gray-700 font-bold hidden md:block"
+                    >ideastore</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-grow lg:w-3/4 xl:w-4/5">
+              <div class="w-full lg:px-6 xl:w-3/4 xl:px-12">
+                <div class="relative">
+                  <input
+                    id="docsearch"
+                    class="transition focus:outline-none border border-transparent focus:bg-white focus:border-gray-300 rounded-lg bg-gray-200 py-2 pr-4 pl-10 block w-full appearance-none leading-normal"
+                    type="text"
+                    placeholder="Search the store"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center"
+                  >
+                    <svg
+                      class="fill-current pointer-events-none text-gray-600 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                id="menu-open-btn"
+                class="flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700"
+              >
+                <svg
+                  class="fill-current w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                id="menu-close-btn"
+                class="hidden flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700"
+              >
+                <svg
+                  class="fill-current w-4 h-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+                  />
+                </svg>
+              </button>
+
+              <div
+                class="hidden lg:flex lg:items-center lg:justify-between xl:w-1/4 px-6"
+              >
+                <div class="relative mr-4"></div>
+                <div class="flex justify-start items-center text-gray-500">
+                  <a
+                    class="block flex items-center hover:text-gray-700 mr-5"
+                    href="https://github.com/tailwindcss/tailwindcss"
+                  >
+                    <svg
+                      class="stroke-current w-6 h-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                      ></path>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                  </a>
+                  <a
+                    class="block flex items-center hover:text-gray-700 mr-5"
+                    href="https://twitter.com/tailwindcss"
+                  >
+                    <svg
+                      class="stroke-current w-6 h-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <a
+                    class="block flex items-center text-gray-500 hover:text-gray-700"
+                    href="/discord"
+                  >
+                    <svg
+                      class="stroke-current w-6 h-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                      ></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        id="menu"
+        class="fixed inset-0 -mb-16 pt-16 w-full h-full bg-white border-b hidden lg:hidden z-40"
+      >
+        <div class="h-full p-6 text-base overflow-y-scroll">
+          <div class="mb-8">
+            <h5
+              class="mb-3 text-gray-500 uppercase tracking-wide font-bold text-sm"
+            >
+              Category
+            </h5>
+            <ul>
+              <li class="mb-3">
+                <a
+                  class="px-2 -mx-2 py-1 relative block hover:text-gray-900 text-gray-600 font-medium"
+                  href="#"
+                >
+                  <span class="relative">Desktop</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  class="px-2 -mx-2 py-1 relative block hover:text-gray-900 text-gray-600 font-medium"
+                  href="#"
+                >
+                  <span class="relative">Notebook</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  class="px-2 -mx-2 py-1 relative block hover:text-gray-900 text-gray-600 font-medium"
+                  href="#"
+                >
+                  <span class="relative">Gaming</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  class="px-2 -mx-2 py-1 relative block hover:text-gray-900 text-gray-600 font-medium"
+                  href="#"
+                >
+                  <span class="relative">Tablet</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  class="px-2 -mx-2 py-1 relative block hover:text-gray-900 text-gray-600 font-medium"
+                  href="#"
+                >
+                  <span class="relative">Handphone</span>
+                </a>
+              </li>
+              <li class="mb-3">
+                <a
+                  class="px-2 -mx-2 py-1 relative block hover:text-gray-900 text-gray-600 font-medium"
+                  href="#"
+                >
+                  <span class="relative">Audio</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto px-6">
+      <div class="pt-24 pb-16 lg:pt-28 w-full">
+        <div
+          class="mb-16 bg-gray-900 bg-cover bg-center bg-no-repeat rounded-lg shadow-lg"
+          style="background-image: url('./img/hero-3.jpg')"
+          title="iamrakbar"
+        >
+          <div
+            class="px-10 py-16 lg:px-16 lg:py-32 lg:w-1/2 fadeInUpBig animated"
+          >
+            <h2
+              class="font-light text-2xl lg:text-4xl leading-tight text-white mb-4"
+            >
+              Build a premium, responsive digital storefront.
+            </h2>
+            <p class="text-white">
+              Ideastore offers unique ways for selling goods — connecting social
+              media and online store.
+            </p>
+          </div>
+        </div>
+        <section class="mb-16">
+          <div class="text-center mb-8">
+            <h2 class="font-bold text-2xl lg:text-3xl tracking-wide mb-2">
+              Popular Products
+            </h2>
+            <p class="text-gray-600">
+              Discover the most popular items on ideastore.
+            </p>
+          </div>
+          <div class="flex flex-wrap -mx-2 mb-8">
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-1.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Apple iPad
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed"> Tablet </span>
+                  </div>
+                  <span class="block">Rp.11.985.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-2.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Apple Keyboard
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Computer Acc
+                    </span>
+                  </div>
+                  <span class="block">Rp.1.485.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-3.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Samsung Ativ
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Notebook
+                    </span>
+                  </div>
+                  <span class="block">Rp.16.485.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-4.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Microsoft Surface
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Notebook
+                    </span>
+                  </div>
+                  <span class="block">Rp.20.985.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-5.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Tivoli M1
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Audio Player
+                    </span>
+                  </div>
+                  <span class="block">Rp.5.985.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-6.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Wacom Intuos Pen
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Computer Acc
+                    </span>
+                  </div>
+                  <span class="block">Rp.1.335.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="mb-16">
+          <div class="text-center mb-8">
+            <h2 class="font-bold text-2xl lg:text-3xl tracking-wide mb-2">
+              Latest Products
+            </h2>
+            <p class="text-gray-600">
+              Add our new arrivals to your weekly lineup.
+            </p>
+          </div>
+          <div class="flex flex-wrap -mx-2 mb-8">
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-7.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Wacom Intuos 5
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Computer Acc
+                    </span>
+                  </div>
+                  <span class="block">Rp.8.385.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-8.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Canon 550D
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed"> Camera </span>
+                  </div>
+                  <span class="block">Rp.12.735.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-9.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Audison TMA-4
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Audio Player
+                    </span>
+                  </div>
+                  <span class="block">Rp.4.185.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-10.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      DALI Sensor 2
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Audio Player
+                    </span>
+                  </div>
+                  <span class="block">Rp.4.035.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-11.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Apple Macbook
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Notebook
+                    </span>
+                  </div>
+                  <span class="block">Rp.20.985.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="relative lg:w-1/3 mx-auto px-2 pb-2">
+              <a
+                class="block rounded-lg cursor-pointer hover:bg-gray-100"
+                href="detail.html"
+              >
+                <img
+                  class="lazyload"
+                  data-src="./img/product-small-12.png"
+                  alt=""
+                />
+                <div class="p-4 lg:px-8 rounded-b-lg">
+                  <div class="flex flex-row flex-wrap mb-2">
+                    <h5 class="font-bold text-xl leading-tight mr-2">
+                      Magic Mouse
+                    </h5>
+                    <span class="text-gray-500 leading-relaxed">
+                      Computer Acc
+                    </span>
+                  </div>
+                  <span class="block">Rp.1.035.000</span>
+                </div>
+              </a>
+              <button
+                class="tippy-button absolute bottom-0 right-0 mb-5 mr-5 focus:outline-none"
+                data-title="Apple iPad"
+              >
+                <div
+                  class="flex justify-center items-center w-12 h-12 rounded-full hover:bg-gray-200"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6 text-gray-500 stroke-current"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section class="bg-gray-100 py-16 border-t border-b">
+      <div class="container max-w-5xl mx-auto px-6">
+        <h2
+          class="font-light text-2xl lg:text-3xl tracking-wide text-center mb-16"
+        >
+          Latest News
+        </h2>
+        <div class="flex flex-wrap -mx-2 mb-8">
+          <div class="w-full lg:w-1/3 px-4 pb-4">
+            <a
+              href="#"
+              class="block rounded-lg overflow-hidden bg-white shadow hover:shadow-lg"
+            >
+              <img
+                class="lazyload w-full"
+                src="https://source.unsplash.com/muOHbrFGEQY/40x30"
+                data-src="https://source.unsplash.com/muOHbrFGEQY/400x300"
+                alt="R. Akbar"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">
+                  Ultimate Drawing Tablet
+                </div>
+                <p class="text-gray-700 text-base">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium nihil.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="w-full lg:w-1/3 px-4 pb-4">
+            <a
+              href="#"
+              class="block rounded-lg overflow-hidden bg-white shadow hover:shadow-lg"
+            >
+              <img
+                class="lazyload w-full"
+                src="https://source.unsplash.com/PM4Vu1B0gxk/40x30"
+                data-src="https://source.unsplash.com/PM4Vu1B0gxk/400x300"
+                alt="R. Akbar"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">Best Coffee Shop</div>
+                <p class="text-gray-700 text-base">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                  exercitationem praesentium nihil.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="w-full lg:w-1/3 px-4 pb-4">
+            <a
+              href="#"
+              class="block rounded-lg overflow-hidden bg-white shadow hover:shadow-lg"
+            >
+              <img
+                class="lazyload w-full"
+                src="https://source.unsplash.com/v8XaVfyo41Q/40x30"
+                data-src="https://source.unsplash.com/v8XaVfyo41Q/400x300"
+                alt="R. Akbar"
+              />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">
+                  Latest Gaming Experience
+                </div>
+                <p class="text-gray-700 text-base">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatibus quia, nulla! Maiores et perferendis eaque.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h2
+          class="font-light text-2xl lg:text-3xl tracking-wide text-center mb-16"
+        >
+          Follow us for updates and more
+        </h2>
+        <div class="flex flex-wrap -mx-2 mb-8">
+          <div class="w-1/3 lg:w-1/6 px-2 pb-4">
+            <a href="#" class="">
+              <img
+                class="w-full lazyload"
+                src="https://source.unsplash.com/4Iflp2TQkaE/25x25"
+                data-src="https://source.unsplash.com/4Iflp2TQkaE/256x256"
+                alt="#"
+              />
+            </a>
+          </div>
+          <div class="w-1/3 lg:w-1/6 px-2 pb-4">
+            <a href="#" class="">
+              <img
+                class="w-full lazyload"
+                src="https://source.unsplash.com/m-u31puVzMQ/25x25"
+                data-src="https://source.unsplash.com/m-u31puVzMQ/256x256"
+                alt="#"
+              />
+            </a>
+          </div>
+          <div class="w-1/3 lg:w-1/6 px-2 pb-4">
+            <a href="#" class="">
+              <img
+                class="w-full lazyload"
+                src="https://source.unsplash.com/EwKkZu18HPo/25x25"
+                data-src="https://source.unsplash.com/EwKkZu18HPo/256x256"
+                alt="#"
+              />
+            </a>
+          </div>
+          <div class="w-1/3 lg:w-1/6 px-2 pb-4">
+            <a href="#" class="">
+              <img
+                class="w-full lazyload"
+                src="https://source.unsplash.com/VvbPNcuFvL8/25x25"
+                data-src="https://source.unsplash.com/VvbPNcuFvL8/256x256"
+                alt="#"
+              />
+            </a>
+          </div>
+          <div class="w-1/3 lg:w-1/6 px-2 pb-4">
+            <a href="#" class="">
+              <img
+                class="w-full lazyload"
+                src="https://source.unsplash.com/cpLsWmMEa1Q/25x25"
+                data-src="https://source.unsplash.com/cpLsWmMEa1Q/256x256"
+                alt="#"
+              />
+            </a>
+          </div>
+          <div class="w-1/3 lg:w-1/6 px-2 pb-4">
+            <a href="#" class="">
+              <img
+                class="w-full lazyload"
+                src="https://source.unsplash.com/UtzrcidfCsk/25x25"
+                data-src="https://source.unsplash.com/UtzrcidfCsk/256x256"
+                alt="#"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="text-center">
+          <a
+            href="#"
+            class="bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded inline-flex items-center"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="stroke-current w-4 h-4 mr-4"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+            <span>follow</span>
+            <span class="ml-1 font-bold">@ideastore</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container mx-auto px-6 py-16">
+        <ul
+          class="flex flex-col lg:flex-row justify-center mb-8 list-none text-center"
+        >
+          <li class="mx-2 mb-2">
+            <a class="text-gray-500 hover:text-gray-700" href="#">About</a>
+          </li>
+          <li class="mx-2 mb-2">
+            <a class="text-gray-500 hover:text-gray-700" href="#"
+              >Terms of Use</a
+            >
+          </li>
+          <li class="mx-2 mb-2">
+            <a class="text-gray-500 hover:text-gray-700" href="#"
+              >Privacy Policy</a
+            >
+          </li>
+          <li class="mx-2 mb-2">
+            <a class="text-gray-500 hover:text-gray-700" href="#">Contact</a>
+          </li>
+        </ul>
+        <ul class="flex justify-center mb-8 list-none text-center">
+          <li class="mx-2 mb-2">
+            <a href="#" class="text-gray-500 hover:text-gray-700">
+              <svg
+                class="fill-current w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="mx-2 mb-2">
+            <a href="#" class="text-gray-500 hover:text-gray-700">
+              <svg
+                class="fill-current w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li class="mx-2 mb-2">
+            <a href="#" class="text-gray-500 hover:text-gray-700">
+              <svg
+                class="sw-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect
+                  class="fill-current"
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="5"
+                  ry="5"
+                ></rect>
+                <path
+                  class="text-white stroke-current"
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line
+                  class="text-white stroke-current"
+                  x1="17.5"
+                  y1="6.5"
+                  x2="17.5"
+                  y2="6.5"
+                ></line>
+              </svg>
+            </a>
+          </li>
+          <li class="mx-2 mb-2">
+            <a href="#" class="text-gray-500 hover:text-gray-700">
+              <svg
+                class="w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  class="fill-current"
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  class="text-white fill-current"
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="text-center text-center text-gray-500">
+          &copy; 2019 Ideastore. Crafted with love by R. Akbar
+        </p>
+      </div>
+    </footer>
+    <div class="fixed bottom-0 right-0 m-4 lg:m-8 z-30">
+      <button
+        id="open-chat-btn"
+        class="flex justify-center items-center absolute bottom-0 right-0 w-16 h-16 bg-gray-700 hover:bg-gray-800 text-white cursor-pointer rounded-full focus:outline-none z-40 animated zoomIn hidden"
+      >
+        <svg
+          class="w-8 h-8 stroke-current"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          fill="none"
+        >
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+          ></path>
+        </svg>
+      </button>
+      <div
+        id="chat-box"
+        class="bg-white mb-24 max-w-sm rounded-lg overflow-hidden shadow-2xl z-30 animated fadeInUpBig hidden"
+      >
+        <div
+          class="flex justify-between items-center w-full h-16 py-4 bg-gray-700"
+        >
+          <h2 class="ml-4 text-white font-bold tracking-wide">
+            Chat Ideastore
+          </h2>
+          <button id="close-chat-btn" class="text-white p-4 focus:outline-none">
+            <svg
+              class="w-4 h-4 stroke-current"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="relative p-4 bg-gray-100 border-b">
+          <div class="absolute w-12 h-12 bottom-0 mb-4">
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full overflow-hidden"
+            >
+              <svg
+                class="h-10 w-auto block"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  class="text-gray-400 fill-current"
+                  d="M3 6l9 4v12l-9-4V6zm14-3v2c0 1.1-2.24 2-5 2s-5-.9-5-2V3c0 1.1 2.24 2 5 2s5-.9 5-2z"
+                />
+                <polygon
+                  class="text-gray-600 fill-current"
+                  points="21 6 12 10 12 22 21 18"
+                />
+              </svg>
+            </div>
+            <span
+              class="absolute bottom-0 right-0 block w-3 h-3 bg-green-500 border-2 border-white rounded-full"
+              >&nbsp;</span
+            >
+          </div>
+          <div
+            id="chat-dialogue"
+            class="p-4 ml-16 text-sm bg-white rounded-lg rounded-bl-sm shadow"
+          >
+            <p>Selamat datang di <strong>Ideastore</strong>!</p>
+            <p>Ada yang bisa kami bantu? 😊</p>
+          </div>
+        </div>
+        <form
+          id="chat-form"
+          class="flex"
+          action="https://api.whatsapp.com/send"
+          method="GET"
+          autocomplete="off"
+          target="_blank"
+        >
+          <input id="chat-phone" type="hidden" name="phone" value="123456789" />
+          <input
+            id="chat-text"
+            type="text"
+            name="text"
+            placeholder="Tulis pesan"
+            class="block w-full p-4 appearance-none leading-normal focus:outline-none"
+          />
+          <button type="submit" class="px-4 text-gray-500 focus:outline-none">
+            <svg
+              class="w-5 h-5 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 535.5 535.5"
+            >
+              <path
+                d="M0 497.25l535.5-229.5L0 38.25v178.5l382.5 51-382.5 51z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <template id="popover">
+      <div class="flex -mr-1">
+        <button
+          class="shop-website flex justify-center items-center w-8 h-8 mr-1 bg-gray-500 hover:bg-gray-600 rounded-lg"
+        >
+          <svg
+            class="text-white stroke-current w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </button>
+        <button
+          class="shop-whatsapp flex justify-center items-center w-8 h-8 mr-1 bg-green-600 hover:bg-green-700 rounded-lg"
+        >
+          <svg
+            class="text-white fill-current w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <button
+          class="shop-line flex justify-center items-center w-8 h-8 mr-1 bg-green-400 hover:bg-green-500 rounded-lg"
+        >
+          <svg
+            class="text-white fill-current w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d=" M27 14.926C27 10.006 22.065 6 16 6S5 10.005 5 14.926c0 4.413 3.913 8.11 9.2 8.808.358.077.845.236.968.542.112.278.073.713.036.995l-.157.942c-.048.28-.22 1.088.953.593 1.174-.494 6.334-3.73 8.642-6.386C26.236 18.67 27 16.896 27 14.925zm-4.247-.41a.577.577 0 0 1 0 1.153h-1.61v1.03h1.61a.578.578 0 0 1 0 1.155h-2.186a.578.578 0 0 1-.577-.577v-4.37c0-.32.26-.578.577-.578h2.186a.578.578 0 0 1 0 1.153h-1.61v1.033h1.61zm-3.537 2.762a.575.575 0 0 1-.578.577.58.58 0 0 1-.46-.23l-2.24-3.05v2.703a.577.577 0 0 1-1.154 0v-4.37a.577.577 0 0 1 1.038-.347l2.24 3.05v-2.703a.578.578 0 0 1 1.154 0v4.37zm-5.26 0a.577.577 0 0 1-1.154 0v-4.37a.577.577 0 0 1 1.153 0v4.37zm-2.262.577H9.508a.577.577 0 0 1-.576-.577v-4.37a.577.577 0 0 1 1.153 0V16.7h1.61a.577.577 0 0 1 0 1.155z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <!-- <button
+          class="flex justify-center items-center w-8 h-8 mr-1 bg-blue-700 hover:bg-blue-800 rounded-lg"
+        >
+          <svg
+            class="text-white fill-current w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d=" M16 6C9.925 6 5 10.56 5 16.185c0 3.205 1.6 6.065 4.1 7.932V28l3.745-2.056c1 .277 2.058.426 3.155.426 6.075 0 11-4.56 11-10.185C27 10.56 22.075 6 16 6zm1.093 13.716l-2.8-2.988-5.467 2.988 6.013-6.383 2.868 2.988 5.398-2.987-6.013 6.383z"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button> -->
+        <button
+          class="shop-telegram flex justify-center items-center w-8 h-8 mr-1 bg-blue-400 hover:bg-blue-500 rounded-lg"
+        >
+          <svg
+            class="text-white fill-current w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d=" M15.02 20.814l9.31-12.48L9.554 17.24l1.92 6.42c.225.63.114.88.767.88l.344-5.22 2.436 1.494z"
+              opacity=".6"
+              fill-rule="evenodd"
+            ></path>
+            <path
+              d=" M12.24 24.54c.504 0 .727-.234 1.008-.51l2.687-2.655-3.35-2.054-.344 5.22z"
+              opacity=".3"
+              fill-rule="evenodd"
+            ></path>
+            <path
+              d=" M12.583 19.322l8.12 6.095c.926.52 1.595.25 1.826-.874l3.304-15.825c.338-1.378-.517-2.003-1.403-1.594L5.024 14.727c-1.325.54-1.317 1.29-.24 1.625l4.98 1.58 11.53-7.39c.543-.336 1.043-.156.633.214"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.1/lazysizes.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
